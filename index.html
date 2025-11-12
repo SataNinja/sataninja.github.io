@@ -7,7 +7,7 @@
   <style>
     body { margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: url('wavey-fingerprint.svg') repeat;
+  background: url('6162371.jpg') repeat;
   background-size: cover;
   color: #222;
   transition: background-position 0.3s;
@@ -16,10 +16,10 @@
     nav { display: flex; gap: 24px; justify-content: center; margin: 18px 0; }
     nav a { text-decoration: none; color: #363f6e; font-weight: bold; transition: color 0.3s;}
     nav a:hover { color: #255f85; }
-    .hero { text-align: center; margin: 40px 0;}
+    .hero { text-align: center; margin: 40px 0; color: #fff;}
     .services-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
     .service-card { 
-      background: #fff; 
+      background: rgba(255, 255, 255, 0.6); 
       border-radius: 9px; 
       box-shadow: 0 2px 10px #0002; 
       padding: 26px 32px; 
@@ -28,12 +28,12 @@
       transition: transform 0.2s ease-out;
     }
     h1, h2 { margin-bottom: 0.6em; }
-    .about { background: #fff; border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin: 40px 0;}
-    .contact-block { background: #fff; border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin-bottom: 40px;}
+    .about { background: rgba(255, 255, 255, 0.6); border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin: 40px 0;}
+    .contact-block { background: rgba(255, 255, 255, 0.6); border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin-bottom: 40px;}
     .contact-form { display: flex; flex-direction: column; gap: 14px; margin-top: 14px;}
     input, textarea { font-size: 16px; padding: 10px; border: 1px solid #b5bdc7; border-radius: 4px; }
     .button { background: #363f6e; color: #fff; border: none; font-size: 18px; border-radius: 5px; padding: 12px 24px; cursor: pointer; }
-    .cities { color: #555; margin-top: 8px; font-size: 1.05em;}
+    .cities { color: #fff; margin-top: 8px; font-size: 1.05em;}
     footer { background: #222a; color: #fff; text-align: center; padding: 24px 0;}
     @media (max-width: 800px) {
       .services-grid { flex-direction: column; align-items: center;}
@@ -44,7 +44,7 @@
 <body>
   <header>
     <h1>Кинолог в Зеленограде</h1>
-    <div class="red">Зеленоград · Солнечногорск · Голубое</div>
+    <div class="cities">Зеленоград · Солнечногорск · Голубое</div>
     <p>Дрессировка | Консультации | Груминг<br>Профессиональный подход к Вам и вашему питомцу</p>
   </header>
   <nav>
@@ -104,8 +104,8 @@
         <button class="button" type="submit">Отправить заявку</button>
       </form>
       <div style="margin-top:9px;color:#666;font-size:1em;">
-        Или звоните/пишите: <b>+7 977 682-71-47</b>
-Telegram, WhatsApp
+        Или звоните/пишите: <b>+7 977 682-71-47<br>
+Telegram, WhatsApp</b>
       </div>
     </section>
   </main>
