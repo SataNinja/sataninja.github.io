@@ -1,67 +1,185 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кинолог Зеленоград – Дрессировка, Консультации, Груминг</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кинолог ZSG — Индивидуальный подход. Зеленоград, Солнечногорск, Голубое</title>
+  <!-- Стили для оформления сайта. Все объяснения ниже в комментариях -->
   <style>
-    body { margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: url('6162371.jpg') repeat;
-  background-size: cover;
-  color: #222;
-  transition: background-position 0.3s;
-}   header, nav, main, footer { max-width: 1100px; margin: auto; }
-    header { background: #363f6e; color: #fff; padding: 40px 0 20px 0; text-align: center;}
-    nav { display: flex; gap: 24px; justify-content: center; margin: 18px 0; }
-    nav a { text-decoration: none; color: #363f6e; font-weight: bold; transition: color 0.3s;}
-    nav a:hover { color: #255f85; }
-    .hero { text-align: center; margin: 40px 0; color: #fff;}
-    .services-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
-    .service-card { 
-      background: rgba(255, 255, 255, 0.6); 
-      border-radius: 9px; 
-      box-shadow: 0 2px 10px #0002; 
-      padding: 26px 32px; 
-      min-width: 240px; 
-      max-width: 350px;
-      transition: transform 0.2s ease-out;
+    /* Общие настройки для body (фон, шрифт, цвет текста) */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #eee;
+      position: relative;
+      min-height: 100vh;
     }
-    h1, h2 { margin-bottom: 0.6em; }
-    .about { background: rgba(255, 255, 255, 0.6); border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin: 40px 0;}
-    .contact-block { background: rgba(255, 255, 255, 0.6); border-radius: 9px; box-shadow: 0 2px 8px #0001; padding: 32px 32px; margin-bottom: 40px;}
-    .contact-form { display: flex; flex-direction: column; gap: 14px; margin-top: 14px;}
-    input, textarea { font-size: 16px; padding: 10px; border: 1px solid #b5bdc7; border-radius: 4px; }
-    .button { background: #363f6e; color: #fff; border: none; font-size: 18px; border-radius: 5px; padding: 12px 24px; cursor: pointer; }
-    .cities { color: #fff; margin-top: 8px; font-size: 1.05em;}
-    footer { background: #222a; color: #fff; text-align: center; padding: 24px 0;}
+    /* Фоновое изображение (блок под всем содержимым) */
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: url('6162371.jpg') center/cover no-repeat;
+      z-index: -1; /* помогает отправить фон назад */
+      filter: brightness(0.9) blur(0.5px);
+    }
+    /* Основной контейнер секций: фон, скругление, тень, прозрачность */
+    header, .about, .service-card, .contact-block, footer {
+      background: rgba(30,40,60,0.75);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #00f5ff2a;
+      margin: 24px auto;
+      padding: 24px 32px;
+      max-width: 950px;
+      backdrop-filter: blur(3px); /* эффект блюра фона */
+    }
+    /* Блок шапки сайта (логотип+меню) */
+    header {
+      text-align: center;
+      color: #fff;
+    }
+    /* Меню навигации по разделам */
+    nav {
+      display: flex;
+      gap: 40px; /* расстояние между ссылками */
+      justify-content: center;
+      margin: 24px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #3ef6ff; /* основной цвет ссылок */
+      font-weight: bold;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+    nav a:hover {
+      color: #fff1a9; /* цвет при наведении */
+      border-bottom: 2px solid #fff1a9;
+    }
+    /* Заголовок на главной (герой-секция) */
+    .hero h2 {
+      font-size: 2em;
+      color: #79affb;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 12px #000, 0 0 18px #38c6ff44;
+    }
+    /* Контейнер для карточек услуг */
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap; /* перенос карточек на новую строку */
+      gap: 32px;
+      justify-content: center;
+    }
+    /* Карточка услуги */
+    .service-card {
+      background: rgba(39,132,217,0.25);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #00f5ff66;
+      padding: 26px 34px;
+      min-width: 230px;
+      max-width: 330px;
+      color: #eafffc;
+      font-size: 1.08em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+    /* Эффект наведения на карточку */
+    .service-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 6px 20px #00f5ffcc;
+    }
+    /* Кнопка (например, в форме записи) */
+    .button {
+      background: linear-gradient(90deg,#38c6ff 0,#6133f2 100%);
+      color: #fff;
+      border:none;
+      border-radius: 8px;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 2px 10px #36e1ff99;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .button:hover {
+      background: #3ef6ff;
+      color: #222;
+      box-shadow: 0 8px 26px #38c6ff89;
+    }
+    /* Оформление полей ввода и текстового поля */
+    input, textarea {
+      font-size: 1em;
+      padding: 11px 13px;
+      border-radius: 7px;
+      border: 1px solid #7ee9eb;
+      background: rgba(255,255,255,0.8);
+      margin-bottom: 12px;
+      outline: none;
+      transition: border 0.2s;
+      width: 100%;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #38c6ff;
+    }
+    /* Контейнер для формы обратной связи */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+    /* Нижний колонтитул (footer) */
+    footer {
+      color: #3ef6ff;
+      text-align: center;
+      font-size: 1.05em;
+      background: rgba(30,40,60,0.85);
+      margin-top: 24px;
+      padding: 18px 0;
+      border-top: 2px solid #3ef6ff30;
+    }
+    /* Адаптивность для мобильных устройств */
     @media (max-width: 800px) {
-      .services-grid { flex-direction: column; align-items: center;}
-      header, nav, main, footer { padding: 0 16px; }
+      header, .about, .service-card, .contact-block, footer {
+        padding: 12px 8px;
+        max-width: 98vw;
+      }
+      .services-grid {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Фоновая картинка размещается поверх всей страницы -->
+  <div class="bg-image"></div>
+  <!-- Шапка сайта: название и меню -->
   <header>
-    <h1>Кинолог в Зеленограде</h1>
-    <div class="cities">Зеленоград · Солнечногорск · Голубое</div>
-    <p>Дрессировка | Консультации | Груминг<br>Профессиональный подход к Вам и вашему питомцу</p>
+    <h1>Кинолог ZSG</h1>
+    <nav>
+      <a href="#about">О себе</a>
+      <a href="#services">Услуги</a>
+      <a href="#record">Записаться</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
   </header>
-  <nav>
-    <a href="#main">Главная</a>
-    <a href="#services">Услуги</a>
-    <a href="#about">О себе</a>
-    <a href="#contact">Контакты</a>
-  </nav>
   <main>
-    <section id="main" class="hero">
-      <h2>Индивидуальный подход и забота о вашем питомце</h2>
-      <p>Помогаю собакам и их владельцам стать идеальной командой!</p>
+    <!-- Блок "О себе" с основными сведениями об авторе -->
+    <section id="about" class="about">
+      <h2>О себе</h2>
+      <p>Меня зовут Виктория. Более 15 лет в сфере дрессировки и ухода за собаками. Опыт работы с самыми разными породами, индивидуальный подход к каждому. Дипломированный специалист, член общества кинологов России.</p>
+      <p>Услуги кинолога, груминг, фитнес, консультации онлайн и оффлайн. Зеленоград, Солнечногорск, Голубое.</p>
+      <p><b>Наши преимущества:</b><br>
+      — Дипломированный специалист<br>
+      — Индивидуальный подход<br>
+      — Множество решений для домашних животных</p>
     </section>
 
+    <!-- Блок с популярными услугами (карточки) -->
     <section id="services">
-      <h2>Услуги</h2>
+      <h2>Популярные услуги</h2>
       <div class="services-grid">
+        <!-- Карточка: дрессировка -->
         <div class="service-card">
           <b>Дрессировка собак</b>
           <ul>
@@ -70,87 +188,53 @@
             <li>Индивидуальные/групповые занятия</li>
           </ul>
         </div>
+        <!-- Карточка: консультация -->
         <div class="service-card">
-          <b>Консультации</b>
+          <b>Онлайн-консультация кинолога</b>
           <ul>
             <li>Проблемы поведения</li>
             <li>Социализация, адаптация</li>
             <li>Лично либо онлайн</li>
           </ul>
         </div>
+        <!-- Карточка: груминг -->
         <div class="service-card">
-          <b>Груминг</b>
+          <b>Груминг и уход</b>
           <ul>
             <li>Мытьё, стрижка, уход за шерстью</li>
             <li>Индивидуальный подход к каждой собаке</li>
           </ul>
         </div>
+        <!-- Карточка: фитнес -->
+        <div class="service-card">
+          <b>Фитнес для собак</b>
+          <ul>
+            <li>Уникальные программы для вашего питомца</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <h2>О себе</h2>
-      <p>Меня зовут Виктория. Более 15 лет в сфере дрессировки и ухода за собаками. Опыт работы с самыми разными породами, индивидуальный подход к каждому.<br>
-      Дипломированный специалист, член общества кинологов России.</p>
-      <!-- Здесь будут фото и подробности (позже) -->
-    </section>
-
-    <section id="contact" class="contact-block">
+    <!-- Форма для записи/связи с владельцем -->
+    <section id="record" class="contact-block">
       <h2>Записаться на услугу</h2>
       <form class="contact-form" method="POST" action="https://formspree.io/f/mzzybyle">
-        <input type="text" name="name" placeholder="Ваше имя" required>
-        <input type="tel" name="phone" placeholder="Телефон для связи" required>
-        <textarea name="message" rows="3" placeholder="Какая услуга вас интересует? Какая порода собаки? Желаемый город для проведения занятий."></textarea>
-        <button class="button" type="submit">Отправить заявку</button>
+        <!-- Поле имени -->
+        <input type="text" name="name" placeholder="Ваше имя" required />
+        <!-- Поле телефона -->
+        <input type="tel" name="phone" placeholder="Телефон" required />
+        <!-- Сообщение -->
+        <textarea name="message" rows="3" placeholder="Сообщение"></textarea>
+        <!-- Кнопка отправки -->
+        <button class="button" type="submit">Отправить</button>
       </form>
-      <div style="margin-top:9px;color:#666;font-size:1em;">
-        Или звоните/пишите: <b>+7 977 682-71-47<br>
-Telegram, WhatsApp</b>
-      </div>
+      <!-- Быстрые контакты -->
+      <div style="margin-top:9px;color:#aeecfe;">Telegram, WhatsApp: <b>+7 977 682-71-47</b></div>
     </section>
   </main>
-  <footer>
-    &copy; 2025 Кинолог Виктория, Зеленоград · Солнечногорск · Голубое
+  <!-- Футер с контактной информацией и регионами работы -->
+  <footer id="contacts">
+    <span>© 2025 Кинологический центр ZSG. Зеленоград — Солнечногорск — Голубое</span>
   </footer>
-
-  <script>
-    // Эффект отталкивания карточек от курсора
-    const cards = document.querySelectorAll('.service-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-            const rect = card.getBoundingClientRect();
-            const cardCenterX = rect.left + rect.width / 2;
-            const cardCenterY = rect.top + rect.height / 2;
-            
-            // Расстояние от курсора до центра карточки
-            const deltaX = e.clientX - cardCenterX;
-            const deltaY = e.clientY - cardCenterY;
-            
-            // Вычисляем силу отталкивания
-            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            const maxDistance = 200;
-            
-            if (distance < maxDistance) {
-                const force = (maxDistance - distance) / maxDistance;
-                const moveX = -(deltaX / distance) * force * 15;
-                const moveY = -(deltaY / distance) * force * 15;
-                
-                card.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            }
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = 'translate(0, 0)';
-        });
-    });
-  </script>
-  <script>
-window.addEventListener('scroll', function() {
-  const x = window.scrollY;
-  document.body.style.backgroundPosition = `${y/5}px ${y/7}px`;
-});
-</script>
-
 </body>
 </html>
