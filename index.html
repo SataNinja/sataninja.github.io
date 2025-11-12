@@ -137,20 +137,69 @@
       padding: 18px 0;
       border-top: 2px solid #3ef6ff30;
     }
-    /* Адаптивность для мобильных устройств */
-    @media (max-width: 800px) {
+    /* Центрируем заголовки основных секций */
+    #about h2, #services h2, #record h2 {
+      text-align: center;
+    }
+    /* Адаптация для мобильных и планшетов */
+    @media (max-width: 900px) {
+      /* Основные блоки становятся шире и получают меньше отступов */
       header, .about, .service-card, .contact-block, footer {
-        padding: 12px 8px;
+        padding: 10px 4vw;
         max-width: 98vw;
       }
+      /* Карточки услуг по одной в столбик */
       .services-grid {
         flex-direction: column;
         align-items: center;
+        gap: 18px;
+      }
+      /* Уменьшаем размеры шрифтов */
+      h1 {
+        font-size: 1.35em;
+      }
+      h2 {
+        font-size: 1.08em;
+      }
+      .service-card {
+        font-size: 0.95em;
+        min-width: 90vw;
+        max-width: 97vw;
+        padding: 14px 12px;
+      }
+      /* Форма обратной связи становится шире */
+      .contact-form {
+        max-width: 98vw;
+        padding: 0 2vw;
+      }
+      /* Футер компактнее */
+      footer {
+        font-size: 0.98em;
+        padding: 10px 0;
       }
     }
-	#about h2, #services h2, #record h2 {
-  text-align: center;
-}
+    @media (max-width: 550px) {
+      /* Ещё больше сжимаем отступы на очень маленьких экранах */
+      header, .about, .service-card, .contact-block, footer {
+        padding: 4px 1vw;
+        border-radius: 8px;
+      }
+      nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        font-size: 0.93em;
+      }
+      h1 {
+        font-size: 1.1em;
+      }
+      h2 {
+        font-size: 0.95em;
+      }
+      .service-card {
+        font-size: 0.91em;
+        padding: 9px 3vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -180,7 +229,7 @@
 
     <!-- Блок с популярными услугами (карточки) -->
     <section id="services">
-      <h2 style="text-align:center;">Популярные услуги</h2>
+      <h2>Популярные услуги</h2>
       <div class="services-grid">
         <!-- Карточка: дрессировка -->
         <div class="service-card">
