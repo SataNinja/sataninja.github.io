@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Руководства и статьи — Кинолог Виктория</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #eee;
+      position: relative;
+      min-height: 100vh;
+    }
+    /* Фоновое изображение */
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: url('6162371.jpg') center/cover no-repeat;
+      z-index: -1;
+      filter: brightness(0.9) blur(0.5px);
+    }
+    header, main, footer {
+      background: rgba(30,40,60,0.75);
+      border-radius: 20px;
+      box-shadow: 0 4px 18px #00f5ff2a;
+      margin: 26px auto 18px auto;
+      padding: 28px 34px;
+      max-width: 950px;
+      backdrop-filter: blur(3px);
+    }
+    header {
+      text-align: center;
+      color: #fff;
+    }
+    footer {
+      color: #3ef6ff;
+      text-align: center;
+      font-size: 1.05em;
+      background: rgba(30,40,60,0.85);
+      margin-top: 22px;
+      padding: 18px 0;
+      border-top: 2px solid #3ef6ff30;
+    }
+    @media (max-width: 800px) {
+      header, main, footer {
+        padding: 12px 8px;
+        max-width: 98vw;
+      }
+    }
+    @media (max-width: 550px) {
+      header, main, footer {
+        padding: 4px 1vw;
+        border-radius: 8px;
+      }
+      h1 {
+        font-size: 1.12em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <header>
+    <h1>Руководства и статьи</h1>
+    <!-- Кнопка возврата на главную -->
+    <nav>
+      <a href="index.html" style="color:#3ef6ff;font-size:1.03em;text-decoration:none;font-weight:bold;">← На главную</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Пустой блок для будущего наполнения статьями -->
+  </main>
+  <footer>
+    <span>© 2025 Кинолог Виктория.</span>
+  </footer>
+</body>
+</html>
